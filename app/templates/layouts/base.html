@@ -1,0 +1,36 @@
+<! DOCTYPE html>
+
+<html>
+	<head>
+		{% block head %}
+		{% endblock %}
+	</head>
+
+	<body>
+		{% block body %}
+		<div class="wrapper">
+			<div class="body_header">
+			{% block body_header %}
+				{% include 'layouts/body_header.html' %}
+			{% endblock %}
+			</div>
+		
+			<div class="body_content">
+				{% block body_content %}
+					{% include 'layouts/body_content.html' %}
+				{% endblock %}
+			</div>
+
+			<div class="body_footer">
+				{% block body_footer %}
+					{% include 'layouts/body_footer.html' %}
+				{% endblock %}
+			</div>
+		<script>
+			{% block extra_js %}
+			{% endblock %}
+		</script>
+		{% endblock %}
+		</div>
+	</body>
+</html>

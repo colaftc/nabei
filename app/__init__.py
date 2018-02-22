@@ -1,11 +1,14 @@
 from flask import Flask,render_template
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import import_string
+from flask_bootstrap import Bootstrap
 
 db=SQLAlchemy()
+bootstrap=Bootstrap()
 
 exts=[
     db,
+    bootstrap,
 ]
 
 blueprints=(
@@ -13,6 +16,7 @@ blueprints=(
     'app.weixin_api:weixin_api',
     'app.weixin_web:weixin_web',
     'app.xiaochengxu:xiaochengxu',
+    'app.backend:backend',
 )
 
 from app.models import OutsideOrder

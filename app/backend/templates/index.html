@@ -1,0 +1,7 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block content %}
+	{% for order in orders %}
+		{{order.products}}<br>
+	{% endfor %}
+{% endblock %}

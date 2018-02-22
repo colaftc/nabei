@@ -14,15 +14,14 @@ backend_users=(
 def backend_login_required(f):
     @wraps(f)
     def wrapper(*args,**kwargs):
-        print('in wrapper')
         if 'backend_user' not in session:
             return redirect(url_for('backend.login'))
         return f(*args,**kwargs)
     return wrapper
 
 def backend_is_authenticate(user):
-    result=filter(lambda n,p : n==user.username and p==user.pwd,backend_users)
-    return result is not None
+    result=list(filter(lambda u : u.username==user.username and u.pwd==user.pwd,backend_users))
+    return True if len(result) else False
 
 def backend_login_user(user):
     session['backend_user']=user

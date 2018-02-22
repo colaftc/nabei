@@ -1,7 +1,18 @@
 {% extends 'bootstrap/base.html' %}
 
+{% block title %}
+那杯
+{% endblock %}
+
 {% block content %}
+	<div class="page-header">
+		<div class="container">
+			<h1>门店订单</h1>
+		</div>
+	</div>
 	{% for order in orders %}
-		{{order.products}}<br>
+		<div class="container">
+			{{order.products}}<br>
+		</div>
 	{% endfor %}
 {% endblock %}

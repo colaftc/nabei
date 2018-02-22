@@ -1,17 +1,6 @@
-{% extends 'bootstrap/base.html' %}
+{% extends 'bs_base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
-{% block title %}
-Nabei
-{% endblock %}
-
-{% block content %}
-	<div class="page-header">
-		<div class="container">
-			<h1>门店订单录入</h1>
-		</div>
-	</div>
-	<div class="container">
-		{{wtf.quick_form(form)}}
-	</div>
+{% block my_content %}
+	{{wtf.quick_form(form)}}
 {% endblock %}

@@ -2,13 +2,16 @@ from flask import Flask,render_template
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import import_string
 from flask_bootstrap import Bootstrap
+from flask_nav import Nav
 
 db=SQLAlchemy()
 bootstrap=Bootstrap()
+nav=Nav()
 
 exts=[
     db,
     bootstrap,
+    nav,
 ]
 
 blueprints=(

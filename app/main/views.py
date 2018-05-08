@@ -1,10 +1,7 @@
 from . import main
+from flask import render_template
 
 @main.route('/')
 @main.route('/index')
 def index():
-    return 'Hello'
-
-@main.route('/test')
-def testing():
-    return 'testing'
+    return render_template('home/index.html')

@@ -1,5 +1,6 @@
 {% extends 'layouts/base.html' %}
 
 {% block body_content %}
-<h1>Hi , {{message}}</h1>
+	{% include 'home/banner.html' %}
+	{% include 'home/body_content.html' %}
 {% endblock %}

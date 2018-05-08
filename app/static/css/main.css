@@ -1,0 +1,68 @@
+.container-fluid{
+	font-size:1rem;
+	margin:0;
+	paddig:0;
+}
+
+body{
+	background-color:black;
+	color:#FFF;
+}
+
+.footer{
+	margin:20px auto;
+	font-size:0.8rem;
+	text-align:center;
+}
+
+.header{
+	margin:25px 0 0 0;
+}
+
+.logo-jpg{
+	width:200px;
+	height:100px;
+	margin-left:180px;
+}
+
+.main-content{
+	text-align:center;
+	margin-top:35px;
+}
+
+.header{
+	height:100px;
+}
+
+.nav a{
+	color:#FFF;
+	cursor:pointer;
+}
+
+.nav{
+	margin-top:60px;
+	height:1rem;
+	float:right;
+}
+
+.nav-item{
+	width:8rem;
+	height:1.8rem;
+	border-right:1px solid #ccc;
+	text-align:center;
+}
+
+.nav-item:last-child{
+	width:14rem;
+	border:none;
+}
+
+.main-content .item{
+	height:265px;
+}
+
+.main-content .item ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}

@@ -1,4 +1,4 @@
-from flask import Blueprint,session,url_for,redirect
+from flask import Blueprint,session,url_for,redirect,request
 from collections import namedtuple
 from functools import wraps
 import os
@@ -23,8 +23,12 @@ def backend_is_authenticate(user):
     result=list(filter(lambda u : u.username==user.username and u.pwd==user.pwd,backend_users))
     return True if len(result) else False
 
+def backend_is_authenticated():
+    return 'backend_user' in session
+
 def backend_login_user(user):
     session['backend_user']=user
+    redirect(request.args['next'])
 
 def backend_logout_user():
     session.pop('backend_user')

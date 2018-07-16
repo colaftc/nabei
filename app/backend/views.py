@@ -1,7 +1,7 @@
 from . import backend,backend_login_required,BackendUser,backend_is_authenticate
 from . import backend_login_user,backend_logout_user
 from .forms import OutsideOrderForm,BackendLoginForm
-from flask import render_template,redirect,flash,url_for
+from flask import render_template,redirect,flash,url_for,request
 from app.models import OutsideOrder
 from app import db
 
@@ -22,7 +22,7 @@ def login():
         )
         if backend_is_authenticate(user):
             backend_login_user(user)
-            return redirect(url_for('backend.index'))
+            return redirect(request.args['next'] or url_for('backend.index'))
     return render_template('login.html',
                            form=login_form,
                            action_name='登录',

@@ -6,6 +6,8 @@ class Config:
     SECRET_KEY='&*_nabei_ganputang_xiangqing_'
     SQLALCHEMY_MIGRATE_REPO=os.path.join(basedir,'migrations')
     SQLALCHEMY_TRACK_MODIFICATIONS=True
+    SQLALCHEMY_DATABASE_URI='mysql://root:fcp0520@localhost:3306/nabei'
+    CSRF_ENABLED=True
 
 class DebugConfig(Config):
     DEBUG=True
@@ -14,5 +16,5 @@ class DebugConfig(Config):
 
 configs={
     'Debug':DebugConfig,
-    'default':DebugConfig,
+    'default':Config,
 }
